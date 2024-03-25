@@ -4,7 +4,7 @@ const managerService = require("./manager.service");
 
 router.post("/saveManager", async (req, res) => {
   await managerService.addManager(req.body);
-  res.status(201).send("Manager Details Saved.");
+  res.status(201).send(req.body);
 });
 
 module.exports = router;

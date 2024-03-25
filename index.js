@@ -1,6 +1,7 @@
 const express = require("express"),
   app = express(),
-  body = require("body-parser");
+  body = require("body-parser"),
+  cors = require("cors");
 
 require("express-async-errors");
 
@@ -11,6 +12,7 @@ const db = require("./database"),
   managerRoutes = require("./Manager/manager.controller"),
   profileRoutes = require("./SocialProfile/profile.controller");
 
+app.use(cors());
 app.use(body.json());
 app.use("/api/users", userRoutes);
 app.use("/api/department", deptRoutes);

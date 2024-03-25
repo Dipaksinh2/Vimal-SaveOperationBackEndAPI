@@ -10,7 +10,7 @@ router.get("/getUser", async (req, res) => {
 
 router.post("/saveUser", async (req, res) => {
   await userService.addUser(req.body);
-  res.status(201).send("User Details Saved.");
+  res.status(201).send(req.body);
 });
 
 module.exports = router;

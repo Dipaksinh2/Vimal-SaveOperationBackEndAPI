@@ -4,6 +4,6 @@ const profileService = require("./profile.service");
 
 router.post("/saveProfile", async (req, res) => {
   await profileService.addProfile(req.body);
-  res.status(201).send("Social Profile Details Saved.");
+  res.status(201).send(req.body);
 });
 module.exports = router;

@@ -4,7 +4,7 @@ const addressService = require("./address.service");
 
 router.post("/saveAddress", async (req, res) => {
   await addressService.addWorkAddress(req.body);
-  res.status(201).send("WorkAddress Details Saved.");
+  res.status(201).send(req.body);
 });
 
 module.exports = router;
